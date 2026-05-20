@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Vision Trader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:      #090c10;
+    --surface: #0e1318;
+    --border:  #1c2530;
+    --muted:   #2a3540;
+    --text:    #c8d8e8;
+    --dim:     #5a7080;
+    --green:   #00d68f;
+    --red:     #ff4d6d;
+    --amber:   #ffb830;
+    --blue:    #38bdf8;
+    --accent:  #7c6af7;
+    --mono:    'JetBrains Mono', monospace;
+    --sans:    'Syne', sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:var(--mono); font-size:13px; min-height:100vh; }
+
+  /* NAV */
+  nav { display:flex; align-items:center; gap:0; border-bottom:1px solid var(--border); padding:0 24px; height:52px; position:sticky; top:0; z-index:100; background:var(--bg); }
+  .nav-brand { font-family:var(--sans); font-weight:800; font-size:17px; letter-spacing:-0.5px; color:#fff; margin-right:auto; }
+  .nav-brand span { color:var(--accent); }
+  .nav-link { color:var(--dim); text-decoration:none; padding:6px 16px; font-size:12px; letter-spacing:0.05em; transition:color .15s; border-radius:4px; }
+  .nav-link:hover, .nav-link.active { color:var(--text); background:var(--surface); }
+  .nav-time { color:var(--dim); font-size:11px; margin-left:12px; }
+
+  /* STATUS BAR */
+  .status-bar { display:flex; align-items:center; gap:12px; padding:10px 24px; background:var(--surface); border-bottom:1px solid var(--border); font-size:11px; color:var(--dim); }
+  .pill { padding:2px 10px; border-radius:20px; font-size:10px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; }
+  .pill-observe { background:#1a2a1a; color:var(--green); border:1px solid #204020; }
+  .pill-live { background:#2a0a0a; color:var(--red); border:1px solid #502020; border-animation:pulse 1.5s infinite; }
+  .pill-paused { background:#2a2010; color:var(--amber); border:1px solid #504010; }
+  .pill-awaiting { background:#1a1a3a; color:var(--accent); border:1px solid #302060; }
+  .dot { width:6px; height:6px; border-radius:50%; background:var(--green); display:inline-block; }
+  .dot.red { background:var(--red); }
+  .dot.amber { background:var(--amber); }
+  .sep { color:var(--muted); }
+
+  /* GRID */
+  .page { max-width:1280px; margin:0 auto; padding:24px; }
+  .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  .col-span-2 { grid-column:span 2; }
+  .col-span-3 { grid-column:span 3; }
+
+  /* CARDS */
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:20px; }
+  .card-title { font-family:var(--sans); font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--dim); margin-bottom:16px; }
+  .metric { font-family:var(--sans); font-size:28px; font-weight:800; color:#fff; line-height:1; }
+  .metric-label { font-size:10px; color:var(--dim); margin-top:4px; letter-spacing:0.06em; }
+  .metric.green { color:var(--green); }
+  .metric.red { color:var(--red); }
+  .metric.amber { color:var(--amber); }
+
+  /* TABLE */
+  table { width:100%; border-collapse:collapse; }
+  th { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--dim); padding:6px 12px; text-align:left; border-bottom:1px solid var(--border); }
+  td { padding:10px 12px; border-bottom:1px solid var(--border); font-size:12px; }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td { background:rgba(255,255,255,0.02); }
+
+  /* BADGES */
+  .badge { padding:2px 8px; border-radius:4px; font-size:10px; font-weight:600; }
+  .badge-buy { background:#0d2b1a; color:var(--green); }
+  .badge-sell { background:#2b0d12; color:var(--red); }
+  .badge-none { background:#1a1a1a; color:var(--dim); }
+  .badge-win { background:#0d2b1a; color:var(--green); }
+  .badge-loss { background:#2b0d12; color:var(--red); }
+  .badge-pending { background:#2a2010; color:var(--amber); }
+  .badge-observe { background:#1a1a3a; color:var(--accent); }
+
+  /* BUTTONS */
+  .btn { padding:8px 18px; border-radius:6px; border:none; cursor:pointer; font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:0.04em; transition:all .15s; }
+  .btn-primary { background:var(--accent); color:#fff; }
+  .btn-primary:hover { background:#9580ff; }
+  .btn-green { background:var(--green); color:#000; font-weight:600; }
+  .btn-green:hover { filter:brightness(1.1); }
+  .btn-red { background:var(--red); color:#fff; }
+  .btn-red:hover { filter:brightness(1.1); }
+  .btn-ghost { background:transparent; color:var(--dim); border:1px solid var(--border); }
+  .btn-ghost:hover { color:var(--text); border-color:var(--muted); }
+  .btn-sm { padding:5px 12px; font-size:11px; }
+
+  /* CONTROLS */
+  .controls { display:flex; gap:10px; align-items:center; }
+
+  /* LEARNINGS */
+  .learning-item { padding:10px 14px; border-left:3px solid var(--accent); background:#0d0d1a; border-radius:0 6px 6px 0; margin-bottom:8px; font-size:12px; color:var(--text); line-height:1.5; }
+
+  /* SECTION HEADER */
+  .section-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
+  .section-title { font-family:var(--sans); font-size:14px; font-weight:700; color:#fff; }
+
+  /* PROGRESS BAR */
+  .progress-track { height:4px; background:var(--border); border-radius:2px; overflow:hidden; margin-top:8px; }
+  .progress-fill { height:100%; background:var(--accent); border-radius:2px; transition:width .3s; }
+
+  /* ALERT */
+  .alert { padding:12px 16px; border-radius:6px; font-size:12px; margin-bottom:16px; }
+  .alert-amber { background:#1e1800; border:1px solid #604020; color:var(--amber); }
+  .alert-green { background:#001e0e; border:1px solid #106040; color:var(--green); }
+  .alert-blue { background:#00101e; border:1px solid #104060; color:var(--blue); }
+
+  /* MODAL */
+  .modal-overlay { display:none; position:fixed; inset:0; background:rgba(0,0,0,.7); z-index:1000; align-items:center; justify-content:center; }
+  .modal-overlay.open { display:flex; }
+  .modal { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:28px; width:440px; max-width:95vw; }
+  .modal-title { font-family:var(--sans); font-size:16px; font-weight:700; color:#fff; margin-bottom:16px; }
+  .input { width:100%; padding:10px 14px; background:var(--bg); border:1px solid var(--border); border-radius:6px; color:var(--text); font-family:var(--mono); font-size:13px; outline:none; }
+  .input:focus { border-color:var(--accent); }
+  .input-group { margin-bottom:14px; }
+  .input-label { font-size:11px; color:var(--dim); margin-bottom:6px; display:block; letter-spacing:0.06em; }
+
+  /* SPARKLINE */
+  .pnl-positive { color:var(--green); }
+  .pnl-negative { color:var(--red); }
+  .pnl-zero { color:var(--dim); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">AI<span>Vision</span>Trader</div>
+  <a href="/" class="nav-link active">Dashboard</a>
+  <a href="/charts" class="nav-link">Charts</a>
+  <a href="/eod" class="nav-link">EOD{% if pending_count > 0 %} <span style="color:var(--amber)">({{ pending_count }})</span>{% endif %}</a>
+  <a href="/history" class="nav-link">History</a>
+  <span class="nav-time">{{ now }}</span>
+</nav>
+
+<!-- STATUS BAR -->
+<div class="status-bar">
+  {% if state.paused %}
+    <span class="dot amber"></span>
+    <span class="pill pill-paused">PAUSED</span>
+    <span>Agent is paused — click Proceed to resume</span>
+  {% elif state.phase == 'OBSERVE' %}
+    <span class="dot"></span>
+    <span class="pill pill-observe">OBSERVATION</span>
+    <span>Paper trading — Day {{ state.day }} of 10</span>
+  {% elif state.phase == 'LIVE' %}
+    <span class="dot red"></span>
+    <span class="pill pill-live">LIVE</span>
+    <span>Real money — ₹{{ "%.0f"|format(state.capital) }} capital</span>
+  {% elif state.phase == 'AWAITING_APPROVAL' %}
+    <span class="dot amber"></span>
+    <span class="pill pill-awaiting">READY TO GO LIVE</span>
+    <span>{{ state.demo_days }}-day observation done — review and activate live trading</span>
+  {% endif %}
+  <span class="sep">·</span>
+  <span>Total P&L: <strong class="{{ 'pnl-positive' if state.total_pnl >= 0 else 'pnl-negative' }}">₹{{ "%.2f"|format(state.total_pnl) }}</strong></span>
+  <span class="sep">·</span>
+  <span>Win rate: <strong>{{ stats.win_rate }}%</strong></span>
+</div>
+
+<div class="page">
+
+  {% if state.phase == 'AWAITING_APPROVAL' %}
+  <div class="alert alert-amber">
+    🎓 <strong>{{ state.demo_days }}-day observation complete!</strong> Your agent has studied the market.
+    Review your results below and click <strong>Go Live</strong> to start real trading with ₹1,000.
+  </div>
+  {% endif %}
+
+  {% if state.risk_alert %}
+  <div class="alert alert-amber">
+    ⚠ <strong>Risk pause active.</strong> {{ state.risk_alert }}
+  </div>
+  {% endif %}
+
+  {% if awaiting_count > 0 %}
+  <div class="alert alert-blue">
+    👀 <strong>{{ awaiting_count }} recommendation(s) waiting for review.</strong>
+    Approve only the trades you actually took so EOD tracking stays clean.
+  </div>
+  {% endif %}
+
+  {% if pending_count > 0 %}
+  <div class="alert alert-amber">
+    ⏳ <strong>{{ pending_count }} approved trade(s) pending EOD evaluation.</strong>
+    <a href="/eod" style="color:var(--amber); text-decoration:none; font-weight:600;">→ Enter exit prices now</a>
+  </div>
+  {% endif %}
+
+  <!-- STAT CARDS -->
+  <div class="grid-4" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-title">Capital</div>
+      <div class="metric">₹{{ "%.0f"|format(state.capital) }}</div>
+      <div class="metric-label">{{ state.phase }} phase</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Total P&L</div>
+      <div class="metric {{ 'green' if state.total_pnl >= 0 else 'red' }}">₹{{ "%.2f"|format(state.total_pnl) }}</div>
+      <div class="metric-label">all time</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Win Rate</div>
+      <div class="metric {{ 'green' if stats.win_rate >= 50 else 'amber' }}">{{ stats.win_rate }}%</div>
+      <div class="metric-label">{{ stats.wins }}W / {{ stats.losses }}L</div>
+      <div class="progress-track"><div class="progress-fill" style="width:{{ stats.win_rate }}%"></div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Day</div>
+      <div class="metric">{{ state.day }}</div>
+      <div class="metric-label">
+        {% if state.phase == 'OBSERVE' %}
+          {{ state.demo_days - state.day + 1 }} days left in observation
+        {% else %}
+          Live trading
+        {% endif %}
+      </div>
+      {% if state.phase == 'OBSERVE' %}
+      <div class="progress-track"><div class="progress-fill" style="width:{{ [((state.day / state.demo_days) * 100), 100]|min }}%"></div></div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-bottom:20px">
+    <div class="card">
+      <div class="card-title">Demo Plan</div>
+      <div class="metric">{{ strategy.demo_days }}</div>
+      <div class="metric-label">trading days before live mode</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Today</div>
+      <div class="metric">{{ today_summary.recommended }}</div>
+      <div class="metric-label">{{ today_summary.approved }} approved · {{ today_summary.wins }}W / {{ today_summary.losses }}L</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Rulebook</div>
+      <div style="font-size:12px; color:var(--text); line-height:1.8">
+        Entry window: <strong>{{ strategy.entry_window }}</strong><br>
+        Stoploss cap: <strong>{{ strategy.max_sl_pct }}%</strong><br>
+        Min RR: <strong>1:{{ strategy.min_rr_ratio }}</strong><br>
+        Risk/trade: <strong>{{ strategy.risk_per_trade_pct }}%</strong><br>
+        Max trades/day: <strong>{{ strategy.max_trades_per_day }}</strong><br>
+        Max open positions: <strong>{{ strategy.max_open_positions }}</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-3">
+
+    <!-- TODAY'S TRADES -->
+    <div class="card col-span-2">
+      <div class="section-header">
+        <div class="section-title">Today's Recommendations</div>
+        <a href="/charts" class="btn btn-ghost btn-sm">View Charts →</a>
+      </div>
+
+      {% if trades %}
+      <table>
+        <thead><tr>
+          <th>Symbol</th><th>Action</th><th>Entry</th><th>SL</th><th>Target</th>
+          <th>Qty</th><th>Conf.</th><th>Pattern</th><th>Status</th><th>Review</th>
+        </tr></thead>
+        <tbody>
+        {% for t in trades %}
+        <tr id="trade-{{ t.id }}">
+          <td><strong style="color:#fff">{{ t.symbol }}</strong></td>
+          <td><span class="badge {{ 'badge-buy' if t.action == 'BUY' else 'badge-sell' }}">{{ t.action }}</span></td>
+          <td>{{ "%.2f"|format(t.entry) if t.entry else "—" }}</td>
+          <td style="color:var(--red)">{{ "%.2f"|format(t.stoploss) if t.stoploss else "—" }}</td>
+          <td style="color:var(--green)">{{ "%.2f"|format(t.target) if t.target else "—" }}</td>
+          <td>{{ t.quantity or 1 }}</td>
+          <td>
+            <span style="color:{{ 'var(--green)' if t.confidence >= 75 else 'var(--amber)' if t.confidence >= 60 else 'var(--red)' }}">
+              {{ t.confidence }}%
+            </span>
+          </td>
+          <td style="color:var(--dim)">{{ t.pattern or "—" }}</td>
+          <td>
+            {% if t.outcome == 'WIN' %}<span class="badge badge-win">WIN</span>
+            {% elif t.outcome == 'LOSS' %}<span class="badge badge-loss">LOSS</span>
+            {% elif t.outcome == 'BREAKEVEN' %}<span class="badge badge-none">BREAKEVEN</span>
+            {% elif t.outcome == 'PENDING' %}<span class="badge badge-pending">APPROVED</span>
+            {% elif t.outcome == 'AWAITING_APPROVAL' %}<span class="badge badge-observe">REVIEW</span>
+            {% elif t.outcome == 'REJECTED' %}<span class="badge badge-none">REJECTED</span>
+            {% else %}<span class="badge badge-none">{{ t.outcome.replace('_', ' ') }}</span>{% endif %}
+          </td>
+          <td>
+            {% if t.outcome == 'AWAITING_APPROVAL' %}
+            <div style="display:flex; gap:6px;">
+              <button class="btn btn-green btn-sm" onclick="approveTrade({{ t.id }})">Approve</button>
+              <button class="btn btn-ghost btn-sm" onclick="rejectTrade({{ t.id }})">Reject</button>
+            </div>
+            {% elif t.outcome == 'PENDING' %}
+            <span style="color:var(--green); font-size:11px;">Tracked at EOD</span>
+            {% elif t.outcome == 'REJECTED' %}
+            <span style="color:var(--dim); font-size:11px;">Skipped manually</span>
+            {% else %}
+            <span style="color:var(--dim); font-size:11px;">—</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <div style="color:var(--dim); text-align:center; padding:32px">
+        No actionable recommendations yet today. Run the morning session at 9:20 AM IST<br>
+        or click <strong>Run Now</strong> to test manually.
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div style="display:flex; flex-direction:column; gap:16px;">
+
+      <!-- CONTROLS -->
+      <div class="card">
+        <div class="card-title">Agent Controls</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          {% if state.paused %}
+          <button class="btn btn-green" onclick="agentProceed()">▶ Proceed Tomorrow</button>
+          {% else %}
+          <button class="btn btn-ghost" onclick="agentPause()">⏸ Pause Agent</button>
+          {% endif %}
+
+          {% if state.phase in ['AWAITING_APPROVAL', 'OBSERVE'] %}
+          <button class="btn btn-primary" onclick="openGoLiveModal()">🚀 Go Live with ₹1,000</button>
+          {% endif %}
+
+          <button class="btn btn-ghost" onclick="runNow()" style="font-size:11px">
+            ▷ Run Morning Session Now
+          </button>
+          <a href="/eod" class="btn btn-ghost" style="text-align:center; text-decoration:none; font-size:11px; display:block;">
+            📋 Enter EOD Exit Prices
+          </a>
+        </div>
+        <div id="ctrl-msg" style="font-size:11px; color:var(--dim); margin-top:10px; display:none;"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Worker Status</div>
+        <div style="font-size:12px; line-height:1.8; color:var(--text)">
+          Last cycle: <strong>{{ state.last_cycle_at or "Not yet run" }}</strong><br>
+          Cycle summary: <strong>{{ state.last_cycle_summary or "No cycles recorded yet" }}</strong><br>
+          Last closeout: <strong>{{ state.last_closeout_at or "Not yet run" }}</strong><br>
+          Last report: <strong>{{ state.last_report_status or "NOT_SENT" }}</strong>
+          {% if state.last_report_at %}<br>Report time: <strong>{{ state.last_report_at }}</strong>{% endif %}
+        </div>
+      </div>
+
+      <!-- LEARNINGS -->
+      <div class="card">
+        <div class="card-title">Recent Learnings</div>
+        {% if learnings and learnings != 'No learnings yet — first day of observation!' %}
+          {% for line in learnings.split('\n')[:4] %}
+          <div class="learning-item">{{ line[2:] if line.startswith('• ') else line }}</div>
+          {% endfor %}
+        {% else %}
+          <div style="color:var(--dim); font-size:12px">No learnings yet — losses generate learning entries.</div>
+        {% endif %}
+      </div>
+
+      <!-- DAILY LOG -->
+      <div class="card">
+        <div class="card-title">Daily Log</div>
+        {% if logs %}
+        <table>
+          <thead><tr><th>Date</th><th>Trades</th><th>P&L</th></tr></thead>
+          <tbody>
+          {% for log in logs[:7] %}
+          <tr>
+            <td style="color:var(--dim)">{{ log.date[5:] }}</td>
+            <td>{{ log.wins }}W {{ log.losses }}L</td>
+            <td class="{{ 'pnl-positive' if log.total_pnl >= 0 else 'pnl-negative' }}">
+              ₹{{ "%.2f"|format(log.total_pnl) }}
+            </td>
+          </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <div style="color:var(--dim); font-size:12px">No history yet.</div>
+        {% endif %}
+      </div>
+
+      <div class="card">
+        <div class="card-title">Worker Events</div>
+        {% if worker_events %}
+          {% for event in worker_events %}
+          <div style="font-size:11px; color:var(--text); margin-bottom:10px; line-height:1.5">
+            <strong style="color:#fff">{{ event.event_type }}</strong><br>
+            <span style="color:var(--dim)">{{ event.event_at }}</span><br>
+            {{ event.message }}
+          </div>
+          {% endfor %}
+        {% else %}
+        <div style="color:var(--dim); font-size:12px">No worker events recorded yet.</div>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- GO LIVE MODAL -->
+<div class="modal-overlay" id="golive-modal">
+  <div class="modal">
+    <div class="modal-title">🚀 Go Live with Real Money</div>
+    <p style="color:var(--dim); font-size:12px; margin-bottom:20px; line-height:1.6">
+      You are about to switch from paper trading to real money mode.
+      Trades will be tracked against real capital. You will still enter
+      trades manually via your broker — the agent only recommends.
+    </p>
+    <div class="input-group">
+      <label class="input-label">Starting Capital (₹)</label>
+      <input class="input" type="number" id="live-capital" value="1000" min="500" max="100000">
+    </div>
+    <div style="display:flex; gap:10px; margin-top:8px">
+      <button class="btn btn-green" onclick="confirmGoLive()">Confirm → Go Live</button>
+      <button class="btn btn-ghost" onclick="closeGoLiveModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+async function post(url, body={}) {
+  const r = await fetch(url, {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify(body)
+  });
+  return r.json();
+}
+
+function showMsg(msg, color='var(--green)') {
+  const el = document.getElementById('ctrl-msg');
+  el.style.display = 'block';
+  el.style.color = color;
+  el.textContent = msg;
+  setTimeout(() => location.reload(), 1500);
+}
+
+async function agentProceed() {
+  const d = await post('/api/proceed');
+  showMsg(d.message);
+}
+
+async function agentPause() {
+  const d = await post('/api/pause');
+  showMsg(d.message, 'var(--amber)');
+}
+
+async function runNow() {
+  showMsg('Starting morning session...', 'var(--blue)');
+  const d = await post('/api/run_now');
+  setTimeout(() => location.reload(), 3000);
+}
+
+async function approveTrade(id) {
+  const d = await post(`/api/trades/${id}/approve`);
+  if (d.error) {
+    showMsg(d.error, 'var(--red)');
+    return;
+  }
+  showMsg(d.message);
+}
+
+async function rejectTrade(id) {
+  const d = await post(`/api/trades/${id}/reject`);
+  if (d.error) {
+    showMsg(d.error, 'var(--red)');
+    return;
+  }
+  showMsg(d.message, 'var(--amber)');
+}
+
+function openGoLiveModal() {
+  document.getElementById('golive-modal').classList.add('open');
+}
+function closeGoLiveModal() {
+  document.getElementById('golive-modal').classList.remove('open');
+}
+
+async function confirmGoLive() {
+  const amt = parseFloat(document.getElementById('live-capital').value);
+  if (!amt || amt < 500) { alert('Minimum ₹500'); return; }
+  const d = await post('/api/go_live', { amount: amt });
+  showMsg(d.message);
+  closeGoLiveModal();
+}
+</script>
+</body>
+</html>

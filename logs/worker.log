@@ -1,0 +1,418 @@
+22:53:31  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+22:53:31  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+22:53:31  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+22:53:31  Added job "_run_cycle_job" to job store "default"
+22:53:31  Added job "_run_closeout_job" to job store "default"
+22:53:31  Added job "_run_report_job" to job store "default"
+22:53:31  Scheduler started
+22:53:31  =======================================================
+22:53:31  🤖 AI VISION TRADING AGENT WORKER
+22:53:31     Separate worker process for screenshot, analysis, closeout, and reporting.
+22:53:31  =======================================================
+22:53:31     Market cycle: weekdays every 10 minutes during market hours
+22:53:31     EOD closeout: weekdays at 15:35 IST
+22:53:31     EOD email report: weekdays at 17:00 IST
+22:53:31     Press Ctrl+C to stop.
+
+11:03:30  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+11:03:30  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+11:03:30  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+11:03:30  Added job "_run_cycle_job" to job store "default"
+11:03:30  Added job "_run_closeout_job" to job store "default"
+11:03:30  Added job "_run_report_job" to job store "default"
+11:03:30  Scheduler started
+11:03:30  =======================================================
+11:03:30  🤖 AI VISION TRADING AGENT WORKER
+11:03:30     Separate worker process for screenshot, analysis, closeout, and reporting.
+11:03:30  =======================================================
+11:03:30     Market cycle: weekdays every 10 minutes during market hours
+11:03:30     EOD closeout: weekdays at 15:35 IST
+11:03:30     EOD email report: weekdays at 17:00 IST
+11:03:30     Press Ctrl+C to stop.
+
+11:05:00  Running job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 11:05:00 IST)" (scheduled at 2026-05-20 11:05:00+05:30)
+11:05:00  
+=======================================================
+11:05:00  📡 MARKET CYCLE | 11:05 IST | Day 1 | OBSERVE
+11:05:00  =======================================================
+11:07:17  AFC is enabled with max remote calls: 10.
+11:07:20  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:07:24  AFC is enabled with max remote calls: 10.
+11:07:25  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:07:29  AFC is enabled with max remote calls: 10.
+11:07:32  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:07:36  AFC is enabled with max remote calls: 10.
+11:07:37  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:07:41  AFC is enabled with max remote calls: 10.
+11:07:43  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:07:47  AFC is enabled with max remote calls: 10.
+11:07:51  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:07:55  AFC is enabled with max remote calls: 10.
+11:07:56  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:08:00  AFC is enabled with max remote calls: 10.
+11:08:02  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:08:06  AFC is enabled with max remote calls: 10.
+11:08:08  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:08:12  AFC is enabled with max remote calls: 10.
+11:08:14  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:08:18  AFC is enabled with max remote calls: 10.
+11:08:20  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:08:24  AFC is enabled with max remote calls: 10.
+11:08:25  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:08:29  AFC is enabled with max remote calls: 10.
+11:08:31  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:08:35  AFC is enabled with max remote calls: 10.
+11:08:37  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:08:41  AFC is enabled with max remote calls: 10.
+11:08:42  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:08:46  AFC is enabled with max remote calls: 10.
+11:08:47  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:08:51  AFC is enabled with max remote calls: 10.
+11:08:53  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:08:57  AFC is enabled with max remote calls: 10.
+11:08:58  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:09:02  AFC is enabled with max remote calls: 10.
+11:09:04  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:09:08  AFC is enabled with max remote calls: 10.
+11:09:10  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:generateContent "HTTP/1.1 404 Not Found"
+11:09:14    ✅ Market cycle complete — 20 screenshots, 0 new setups, 0 auto-closed trade(s)
+11:09:14  Job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 11:15:00 IST)" executed successfully
+11:13:19  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+11:13:19  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+11:13:19  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+11:13:19  Added job "_run_cycle_job" to job store "default"
+11:13:19  Added job "_run_closeout_job" to job store "default"
+11:13:19  Added job "_run_report_job" to job store "default"
+11:13:19  Scheduler started
+11:13:19  =======================================================
+11:13:19  🤖 AI VISION TRADING AGENT WORKER
+11:13:19     Separate worker process for screenshot, analysis, closeout, and reporting.
+11:13:19  =======================================================
+11:13:19     Market cycle: weekdays every 10 minutes during market hours
+11:13:19     EOD closeout: weekdays at 15:35 IST
+11:13:19     EOD email report: weekdays at 17:00 IST
+11:13:19     Press Ctrl+C to stop.
+
+11:15:00  Running job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 11:15:00 IST)" (scheduled at 2026-05-20 11:15:00+05:30)
+11:15:00  
+=======================================================
+11:15:00  📡 MARKET CYCLE | 11:15 IST | Day 1 | OBSERVE
+11:15:00  =======================================================
+11:17:13  AFC is enabled with max remote calls: 10.
+11:17:23  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+11:17:27  AFC is enabled with max remote calls: 10.
+11:17:36  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+11:17:40  AFC is enabled with max remote calls: 10.
+11:17:48  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+11:17:52  AFC is enabled with max remote calls: 10.
+11:18:01  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+11:18:05  AFC is enabled with max remote calls: 10.
+11:18:17  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+11:18:21  AFC is enabled with max remote calls: 10.
+11:18:24  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:18:28  AFC is enabled with max remote calls: 10.
+11:18:30  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:18:34  AFC is enabled with max remote calls: 10.
+11:18:37  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:18:41  AFC is enabled with max remote calls: 10.
+11:18:49  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+11:18:53  AFC is enabled with max remote calls: 10.
+11:19:02  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+11:19:06  AFC is enabled with max remote calls: 10.
+11:19:15  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+11:19:19  AFC is enabled with max remote calls: 10.
+11:19:20  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:19:24  AFC is enabled with max remote calls: 10.
+11:19:26  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:19:30  AFC is enabled with max remote calls: 10.
+11:19:34  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:19:38  AFC is enabled with max remote calls: 10.
+11:19:47  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+11:19:51  AFC is enabled with max remote calls: 10.
+11:19:55  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+11:19:59  AFC is enabled with max remote calls: 10.
+11:20:00  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:20:04  AFC is enabled with max remote calls: 10.
+11:20:07  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:20:11  AFC is enabled with max remote calls: 10.
+11:20:13  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:20:17  AFC is enabled with max remote calls: 10.
+11:20:19  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:20:23    🔴 SELL  KOTAKBANK @ ₹380.0 | SL: ₹383.0 | T: ₹374.0 | Qty: 7 | RR: 2.0 | Risk: ₹21.00 | Conf: 70%
+11:20:23    ✅ Market cycle complete — 20 screenshots, 1 new setups, 0 auto-closed trade(s)
+11:20:23  Job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 11:25:00 IST)" executed successfully
+11:25:00  Running job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 11:35:00 IST)" (scheduled at 2026-05-20 11:25:00+05:30)
+11:25:00  
+=======================================================
+11:25:00  📡 MARKET CYCLE | 11:25 IST | Day 1 | OBSERVE
+11:25:00  =======================================================
+11:35:48  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+11:35:48  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+11:35:48  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+11:35:48  Added job "_run_cycle_job" to job store "default"
+11:35:48  Added job "_run_closeout_job" to job store "default"
+11:35:48  Added job "_run_report_job" to job store "default"
+11:35:48  Scheduler started
+11:35:48  =======================================================
+11:35:48  🤖 AI VISION TRADING AGENT WORKER
+11:35:48     Separate worker process for screenshot, analysis, closeout, and reporting.
+11:35:48  =======================================================
+11:35:48     Market cycle: weekdays every 10 minutes during market hours
+11:35:48     EOD closeout: weekdays at 15:35 IST
+11:35:48     EOD email report: weekdays at 17:00 IST
+11:35:48     Press Ctrl+C to stop.
+
+11:45:00  Running job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 11:45:00 IST)" (scheduled at 2026-05-20 11:45:00+05:30)
+11:45:00  
+=======================================================
+11:45:00  📡 MARKET CYCLE | 11:45 IST | Day 1 | LIVE
+11:45:00  =======================================================
+11:47:09  AFC is enabled with max remote calls: 10.
+11:47:11  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:47:26  AFC is enabled with max remote calls: 10.
+11:47:28  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:47:43  AFC is enabled with max remote calls: 10.
+11:47:44  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:47:59  AFC is enabled with max remote calls: 10.
+11:48:00  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:48:15  AFC is enabled with max remote calls: 10.
+11:48:17  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:48:32  AFC is enabled with max remote calls: 10.
+11:48:34  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:48:49  AFC is enabled with max remote calls: 10.
+11:48:50  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:49:05  AFC is enabled with max remote calls: 10.
+11:49:07  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:49:22  AFC is enabled with max remote calls: 10.
+11:49:23  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:49:38  AFC is enabled with max remote calls: 10.
+11:49:39  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:49:54  AFC is enabled with max remote calls: 10.
+11:49:55  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:50:10  AFC is enabled with max remote calls: 10.
+11:50:12  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:50:27  AFC is enabled with max remote calls: 10.
+11:50:28  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:50:43  AFC is enabled with max remote calls: 10.
+11:50:45  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:51:00  AFC is enabled with max remote calls: 10.
+11:51:01  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:51:16  AFC is enabled with max remote calls: 10.
+11:51:16  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:51:31  AFC is enabled with max remote calls: 10.
+11:51:33  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:51:48  AFC is enabled with max remote calls: 10.
+11:51:50  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:52:05  AFC is enabled with max remote calls: 10.
+11:52:07  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:52:22  AFC is enabled with max remote calls: 10.
+11:52:23  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:52:38    ✅ Market cycle complete — 20 screenshots, 0 new setups, 0 auto-closed trade(s)
+11:52:38  Job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 11:55:00 IST)" executed successfully
+11:55:00  Running job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 12:05:00 IST)" (scheduled at 2026-05-20 11:55:00+05:30)
+11:55:00  
+=======================================================
+11:55:00  📡 MARKET CYCLE | 11:55 IST | Day 1 | LIVE
+11:55:00  =======================================================
+11:57:16  AFC is enabled with max remote calls: 10.
+11:57:18  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:57:33  AFC is enabled with max remote calls: 10.
+11:57:34  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:57:49  AFC is enabled with max remote calls: 10.
+11:57:49  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:58:04  AFC is enabled with max remote calls: 10.
+11:58:06  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:58:21  AFC is enabled with max remote calls: 10.
+11:58:23  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:58:38  AFC is enabled with max remote calls: 10.
+11:58:39  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:58:54  AFC is enabled with max remote calls: 10.
+11:58:55  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:59:10  AFC is enabled with max remote calls: 10.
+11:59:11  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:59:26  AFC is enabled with max remote calls: 10.
+11:59:27  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:59:42  AFC is enabled with max remote calls: 10.
+11:59:43  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+11:59:58  AFC is enabled with max remote calls: 10.
+11:59:59  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:00:14  AFC is enabled with max remote calls: 10.
+12:00:16  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:00:31  AFC is enabled with max remote calls: 10.
+12:00:31  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:00:46  AFC is enabled with max remote calls: 10.
+12:00:48  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:01:03  AFC is enabled with max remote calls: 10.
+12:01:04  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:01:19  AFC is enabled with max remote calls: 10.
+12:01:20  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:01:35  AFC is enabled with max remote calls: 10.
+12:01:37  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:01:52  AFC is enabled with max remote calls: 10.
+12:01:53  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:02:08  AFC is enabled with max remote calls: 10.
+12:02:11  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:02:26  AFC is enabled with max remote calls: 10.
+12:02:27  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:02:42    ✅ Market cycle complete — 20 screenshots, 0 new setups, 0 auto-closed trade(s)
+12:02:42  Job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 12:05:00 IST)" executed successfully
+12:05:00  Running job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 12:15:00 IST)" (scheduled at 2026-05-20 12:05:00+05:30)
+12:05:00  
+=======================================================
+12:05:00  📡 MARKET CYCLE | 12:05 IST | Day 1 | LIVE
+12:05:00  =======================================================
+12:07:15  AFC is enabled with max remote calls: 10.
+12:07:17  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:07:32  AFC is enabled with max remote calls: 10.
+12:07:34  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:07:49  AFC is enabled with max remote calls: 10.
+12:07:50  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:08:05  AFC is enabled with max remote calls: 10.
+12:08:06  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:08:21  AFC is enabled with max remote calls: 10.
+12:08:22  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:08:37  AFC is enabled with max remote calls: 10.
+12:08:39  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:08:54  AFC is enabled with max remote calls: 10.
+12:08:55  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:09:10  AFC is enabled with max remote calls: 10.
+12:09:11  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:09:26  AFC is enabled with max remote calls: 10.
+12:09:27  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:09:42  AFC is enabled with max remote calls: 10.
+12:09:43  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:09:58  AFC is enabled with max remote calls: 10.
+12:09:59  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:10:14  AFC is enabled with max remote calls: 10.
+12:10:16  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:10:31  AFC is enabled with max remote calls: 10.
+12:10:32  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:10:47  AFC is enabled with max remote calls: 10.
+12:10:48  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:11:03  AFC is enabled with max remote calls: 10.
+12:11:06  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:11:21  AFC is enabled with max remote calls: 10.
+12:11:22  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:11:37  AFC is enabled with max remote calls: 10.
+12:11:38  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:11:53  AFC is enabled with max remote calls: 10.
+12:11:55  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:12:10  AFC is enabled with max remote calls: 10.
+12:12:11  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:12:26  AFC is enabled with max remote calls: 10.
+12:12:28  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:12:43    ✅ Market cycle complete — 20 screenshots, 0 new setups, 0 auto-closed trade(s)
+12:12:43  Job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 12:15:00 IST)" executed successfully
+12:15:00  Running job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 12:25:00 IST)" (scheduled at 2026-05-20 12:15:00+05:30)
+12:15:00  
+=======================================================
+12:15:00  📡 MARKET CYCLE | 12:15 IST | Day 1 | LIVE
+12:15:00  =======================================================
+12:17:10  AFC is enabled with max remote calls: 10.
+12:17:11  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:17:26  AFC is enabled with max remote calls: 10.
+12:17:26  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:17:41  AFC is enabled with max remote calls: 10.
+12:17:42  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:17:57  AFC is enabled with max remote calls: 10.
+12:17:58  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:18:13  AFC is enabled with max remote calls: 10.
+12:18:13  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:18:28  AFC is enabled with max remote calls: 10.
+12:18:29  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:18:44  AFC is enabled with max remote calls: 10.
+12:18:44  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:18:59  AFC is enabled with max remote calls: 10.
+12:19:00  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:19:15  AFC is enabled with max remote calls: 10.
+12:19:16  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:19:31  AFC is enabled with max remote calls: 10.
+12:19:31  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:19:46  AFC is enabled with max remote calls: 10.
+12:19:47  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:20:02  AFC is enabled with max remote calls: 10.
+12:20:02  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:20:17  AFC is enabled with max remote calls: 10.
+12:20:18  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:20:33  AFC is enabled with max remote calls: 10.
+12:20:33  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:20:48  AFC is enabled with max remote calls: 10.
+12:20:49  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:21:04  AFC is enabled with max remote calls: 10.
+12:21:04  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:21:19  AFC is enabled with max remote calls: 10.
+12:21:20  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:21:35  AFC is enabled with max remote calls: 10.
+12:21:35  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:21:50  AFC is enabled with max remote calls: 10.
+12:21:51  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:22:06  AFC is enabled with max remote calls: 10.
+12:22:06  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:22:21    ✅ Market cycle complete — 20 screenshots, 0 new setups, 0 auto-closed trade(s)
+12:22:21  Job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 12:25:00 IST)" executed successfully
+12:25:00  Running job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 12:35:00 IST)" (scheduled at 2026-05-20 12:25:00+05:30)
+12:25:00  
+=======================================================
+12:25:00  📡 MARKET CYCLE | 12:25 IST | Day 1 | LIVE
+12:25:00  =======================================================
+12:27:09  AFC is enabled with max remote calls: 10.
+12:27:09  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:27:24  AFC is enabled with max remote calls: 10.
+12:27:25  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:27:40  AFC is enabled with max remote calls: 10.
+12:27:40  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:27:55  AFC is enabled with max remote calls: 10.
+12:27:56  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:28:11  AFC is enabled with max remote calls: 10.
+12:28:11  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:28:26  AFC is enabled with max remote calls: 10.
+12:28:27  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:28:42  AFC is enabled with max remote calls: 10.
+12:28:42  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:28:58  AFC is enabled with max remote calls: 10.
+12:28:58  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:29:13  AFC is enabled with max remote calls: 10.
+12:29:14  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:29:29  AFC is enabled with max remote calls: 10.
+12:29:29  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:29:44  AFC is enabled with max remote calls: 10.
+12:29:45  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 429 Too Many Requests"
+12:30:00  AFC is enabled with max remote calls: 10.
+12:30:06  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:30:21  AFC is enabled with max remote calls: 10.
+12:30:29  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:30:44  AFC is enabled with max remote calls: 10.
+12:30:51  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:31:06  AFC is enabled with max remote calls: 10.
+12:31:12  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:31:27  AFC is enabled with max remote calls: 10.
+12:31:32  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:31:47  AFC is enabled with max remote calls: 10.
+12:31:54  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:32:09  AFC is enabled with max remote calls: 10.
+12:32:18  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:32:33  AFC is enabled with max remote calls: 10.
+12:32:40  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:32:55  AFC is enabled with max remote calls: 10.
+12:33:02  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:33:17    ✅ Market cycle complete — 20 screenshots, 0 new setups, 0 auto-closed trade(s)
+12:33:17  Job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 12:35:00 IST)" executed successfully
+12:35:00  Running job "_run_cycle_job (trigger: cron[day_of_week='mon-fri', hour='9-15', minute='5,15,25,35,45,55'], next run at: 2026-05-20 12:45:00 IST)" (scheduled at 2026-05-20 12:35:00+05:30)
+12:35:00  
+=======================================================
+12:35:00  📡 MARKET CYCLE | 12:35 IST | Day 1 | LIVE
+12:35:00  =======================================================
+12:37:08  AFC is enabled with max remote calls: 10.
+12:37:15  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:37:30  AFC is enabled with max remote calls: 10.
+12:37:39  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:37:54  AFC is enabled with max remote calls: 10.
+12:38:01  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:38:16  AFC is enabled with max remote calls: 10.
+12:38:26  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:38:41  AFC is enabled with max remote calls: 10.
+12:38:48  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:39:03  AFC is enabled with max remote calls: 10.
+12:39:09  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"
+12:39:24  AFC is enabled with max remote calls: 10.
+12:39:31  HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent "HTTP/1.1 200 OK"

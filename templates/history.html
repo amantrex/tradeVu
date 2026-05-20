@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>History — AI Vision Trader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#090c10; --surface:#0e1318; --border:#1c2530;
+    --text:#c8d8e8; --dim:#5a7080;
+    --green:#00d68f; --red:#ff4d6d; --amber:#ffb830; --accent:#7c6af7;
+    --mono:'JetBrains Mono',monospace; --sans:'Syne',sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:var(--mono); font-size:13px; }
+  nav { display:flex; align-items:center; border-bottom:1px solid var(--border); padding:0 24px; height:52px; background:var(--bg); }
+  .nav-brand { font-family:var(--sans); font-weight:800; font-size:17px; color:#fff; margin-right:auto; }
+  .nav-brand span { color:var(--accent); }
+  .nav-link { color:var(--dim); text-decoration:none; padding:6px 16px; font-size:12px; border-radius:4px; }
+  .nav-link:hover, .nav-link.active { color:var(--text); background:var(--surface); }
+  .page { max-width:1280px; margin:0 auto; padding:24px; }
+  .page-title { font-family:var(--sans); font-size:20px; font-weight:800; color:#fff; margin-bottom:24px; }
+  .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:24px; }
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:18px; }
+  .card-title { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--dim); margin-bottom:12px; }
+  .metric { font-family:var(--sans); font-size:26px; font-weight:800; color:#fff; }
+  .metric.green { color:var(--green); }
+  .metric.red { color:var(--red); }
+  .metric.amber { color:var(--amber); }
+  table { width:100%; border-collapse:collapse; }
+  th { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--dim); padding:8px 12px; text-align:left; border-bottom:1px solid var(--border); }
+  td { padding:10px 12px; border-bottom:1px solid var(--border); font-size:12px; }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td { background:rgba(255,255,255,.02); }
+  .badge { padding:2px 8px; border-radius:4px; font-size:10px; font-weight:600; }
+  .badge-buy { background:#0d2b1a; color:var(--green); }
+  .badge-sell { background:#2b0d12; color:var(--red); }
+  .badge-win { background:#0d2b1a; color:var(--green); }
+  .badge-loss { background:#2b0d12; color:var(--red); }
+  .badge-pending { background:#2a2010; color:var(--amber); }
+  .badge-none { background:#1a1a1a; color:var(--dim); }
+  .section-title { font-family:var(--sans); font-size:15px; font-weight:700; color:#fff; margin-bottom:16px; }
+  .learning-item { padding:10px 14px; border-left:3px solid var(--accent); background:#0d0d1a; border-radius:0 6px 6px 0; margin-bottom:8px; font-size:12px; color:var(--text); line-height:1.5; }
+  .learning-item.win { border-left-color:var(--green); background:#08150f; }
+  .learning-item.loss { border-left-color:var(--red); background:#180b10; }
+  .learning-item.break { border-left-color:var(--amber); background:#181205; }
+  .pnl-pos { color:var(--green); }
+  .pnl-neg { color:var(--red); }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-brand">AI<span>Vision</span>Trader</div>
+  <a href="/" class="nav-link">Dashboard</a>
+  <a href="/charts" class="nav-link">Charts</a>
+  <a href="/eod" class="nav-link">EOD</a>
+  <a href="/history" class="nav-link active">History</a>
+</nav>
+<div class="page">
+  <div class="page-title">Trade History & Learnings</div>
+
+  <div class="grid-4">
+    <div class="card">
+      <div class="card-title">Total Trades</div>
+      <div class="metric">{{ stats.total or 0 }}</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Win Rate</div>
+      <div class="metric {{ 'green' if stats.win_rate >= 50 else 'amber' }}">{{ stats.win_rate or 0 }}%</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Total P&L</div>
+      <div class="metric {{ 'green' if (stats.total_pnl or 0) >= 0 else 'red' }}">
+        ₹{{ "%.2f"|format(stats.total_pnl or 0) }}
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Avg Confidence</div>
+      <div class="metric amber">{{ "%.0f"|format(stats.avg_confidence or 0) }}%</div>
+    </div>
+  </div>
+
+  <!-- LEARNINGS -->
+  {% if learnings and learnings != 'No learnings yet — first day of observation!' %}
+  <div style="margin-bottom:24px">
+    <div class="section-title">🧠 Agent Learnings</div>
+    {% for line in learnings.split('\n') %}
+    <div class="learning-item {{ 'win' if 'WIN:' in line else 'loss' if 'LOSS:' in line else 'break' if 'BREAKEVEN:' in line else '' }}">
+      {{ line[2:] if line.startswith('• ') else line }}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- TRADE LOG -->
+  <div class="section-title">All Trades</div>
+  <div class="card" style="padding:0; overflow:hidden">
+    <table>
+      <thead><tr>
+        <th>Date</th><th>Symbol</th><th>Action</th><th>Entry</th>
+        <th>SL</th><th>Target</th><th>Exit</th><th>P&L</th>
+        <th>Conf.</th><th>Pattern</th><th>Outcome</th>
+      </tr></thead>
+      <tbody>
+      {% for t in trades %}
+      {% if t.action != 'NO_ACTION' %}
+      <tr>
+        <td style="color:var(--dim)">{{ t.date }}</td>
+        <td><strong style="color:#fff">{{ t.symbol }}</strong></td>
+        <td><span class="badge {{ 'badge-buy' if t.action=='BUY' else 'badge-sell' }}">{{ t.action }}</span></td>
+        <td>{{ "%.2f"|format(t.entry) if t.entry else "—" }}</td>
+        <td style="color:var(--red)">{{ "%.2f"|format(t.stoploss) if t.stoploss else "—" }}</td>
+        <td style="color:var(--green)">{{ "%.2f"|format(t.target) if t.target else "—" }}</td>
+        <td>{{ "%.2f"|format(t.exit_price) if t.exit_price else "—" }}</td>
+        <td class="{{ 'pnl-pos' if (t.pnl or 0) >= 0 else 'pnl-neg' }}">
+          {{ ("+" if (t.pnl or 0) >= 0 else "") + "₹%.2f"|format(t.pnl) if t.pnl is not none else "—" }}
+        </td>
+        <td>{{ t.confidence }}%</td>
+        <td style="color:var(--amber)">{{ t.pattern or "—" }}</td>
+        <td>
+          {% if t.outcome == 'WIN' %}<span class="badge badge-win">WIN</span>
+          {% elif t.outcome == 'LOSS' %}<span class="badge badge-loss">LOSS</span>
+          {% elif t.outcome == 'PENDING' %}<span class="badge badge-pending">APPROVED</span>
+          {% elif t.outcome == 'AWAITING_APPROVAL' %}<span class="badge badge-none">REVIEW</span>
+          {% elif t.outcome == 'REJECTED' %}<span class="badge badge-none">REJECTED</span>
+          {% elif t.outcome == 'EXPIRED' %}<span class="badge badge-none">EXPIRED</span>
+          {% else %}<span class="badge badge-none">{{ t.outcome }}</span>{% endif %}
+        </td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+18:10:41  =======================================================
+18:10:41  🤖 AI VISION TRADING AGENT v2
+18:10:41     No broker API. No KYC. Chart screenshots + OpenAI.
+18:10:41  =======================================================
+18:10:41     Dashboard: http://127.0.0.1:8080
+18:10:41     Scheduler: weekdays at 09:20 & 15:25 IST
+18:10:41     Press Ctrl+C to stop.
+
+18:10:41  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+18:10:41  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+18:10:41  Added job "run_scheduler.<locals>.morning" to job store "default"
+18:10:41  Added job "run_scheduler.<locals>.eod" to job store "default"
+18:10:41  Scheduler started
+18:10:41  ⏰ Scheduler running — Morning: 09:20 IST | EOD: 15:25 IST
+18:11:07  =======================================================
+18:11:07  🤖 AI VISION TRADING AGENT v2
+18:11:07     No broker API. No KYC. Chart screenshots + OpenAI.
+18:11:07  =======================================================
+18:11:07     Dashboard: http://127.0.0.1:8080
+18:11:07     Scheduler: weekdays at 09:20 & 15:25 IST
+18:11:07     Press Ctrl+C to stop.
+
+18:11:07  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+18:11:07  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+18:11:07  Added job "run_scheduler.<locals>.morning" to job store "default"
+18:11:07  Added job "run_scheduler.<locals>.eod" to job store "default"
+18:11:07  Scheduler started
+18:11:07  ⏰ Scheduler running — Morning: 09:20 IST | EOD: 15:25 IST
+18:11:11  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+18:11:11  [33mPress CTRL+C to quit[0m
+18:11:22  127.0.0.1 - - [19/May/2026 18:11:22] "HEAD /charts HTTP/1.1" 200 -
+18:11:34  127.0.0.1 - - [19/May/2026 18:11:34] "GET /charts HTTP/1.1" 200 -
+18:11:34  127.0.0.1 - - [19/May/2026 18:11:34] "GET / HTTP/1.1" 200 -
+18:11:34  127.0.0.1 - - [19/May/2026 18:11:34] "GET /charts HTTP/1.1" 200 -
+18:11:58  127.0.0.1 - - [19/May/2026 18:11:58] "GET /eod HTTP/1.1" 200 -
+18:12:05  127.0.0.1 - - [19/May/2026 18:12:05] "GET / HTTP/1.1" 200 -
+18:12:08  127.0.0.1 - - [19/May/2026 18:12:08] "GET /history HTTP/1.1" 200 -
+18:12:11  127.0.0.1 - - [19/May/2026 18:12:11] "GET /eod HTTP/1.1" 200 -
+18:12:12  127.0.0.1 - - [19/May/2026 18:12:12] "GET /charts HTTP/1.1" 200 -
+18:15:24  127.0.0.1 - - [19/May/2026 18:15:24] "GET /charts HTTP/1.1" 200 -
+18:15:25  127.0.0.1 - - [19/May/2026 18:15:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+18:19:59  =======================================================
+18:19:59  🤖 AI VISION TRADING AGENT v2
+18:19:59     No broker API. No KYC. Chart screenshots + OpenAI.
+18:19:59  =======================================================
+18:19:59     Dashboard: http://127.0.0.1:8080
+18:19:59     Scheduler: weekdays at 09:45 & 15:25 IST
+18:19:59     Press Ctrl+C to stop.
+
+18:19:59  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+18:19:59  Adding job tentatively -- it will be properly scheduled when the scheduler starts
+18:19:59  Added job "run_scheduler.<locals>.morning" to job store "default"
+18:19:59  Added job "run_scheduler.<locals>.eod" to job store "default"
+18:19:59  Scheduler started
+18:19:59  ⏰ Scheduler running — Morning: 09:45 IST | EOD: 15:25 IST
+18:19:59  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+18:19:59  [33mPress CTRL+C to quit[0m
+18:20:13  127.0.0.1 - - [19/May/2026 18:20:13] "HEAD / HTTP/1.1" 200 -
+22:34:58  127.0.0.1 - - [19/May/2026 22:34:58] "GET /charts HTTP/1.1" 200 -
