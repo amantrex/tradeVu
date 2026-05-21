@@ -2,3 +2,7 @@
 .venv/
 venv/
 *.node
+# Virtual environment – never commit
+.venv/
+venv/
+*.node
