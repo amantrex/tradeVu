@@ -1,0 +1,4 @@
+# Ignore virtual‑env and any large caches
+.venv/
+venv/
+*.node
