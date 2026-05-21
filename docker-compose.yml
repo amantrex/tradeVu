@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  tradevu-bot:
+    build: .
+    container_name: tradevu-bot
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app

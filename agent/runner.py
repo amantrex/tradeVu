@@ -278,7 +278,7 @@ def run_market_cycle(manual: bool = False):
 
             sized = validate_and_size(decision, state["capital"])
             if sized:
-                sized["outcome"] = "AWAITING_APPROVAL"
+                sized["outcome"] = "PENDING"
                 sized["opened_at"] = run_at
                 candidates.append(sized)
 
@@ -300,7 +300,7 @@ def run_market_cycle(manual: bool = False):
         if skipped_for_cap:
             logger.info(f"  ℹ️  Skipped {skipped_for_cap} lower-ranked setup(s) due to max {MAX_TRADES_PER_DAY} trades/day.")
 
-        state["awaiting_eod_approval"] = bool(get_pending_trades(today))
+        state["awaiting_eod_approval"] = False
         state["last_cycle_at"] = run_at
         state["last_cycle_batch"] = batch_id
         state["last_cycle_summary"] = (

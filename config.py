@@ -63,12 +63,12 @@ PAPER_CAPITAL         = 10_000   # ₹ for observation phase
 LIVE_CAPITAL          = 1_000    # ₹ when you go live manually
 DEMO_DAYS             = 5        # Paper-trading demo period before going live
 RISK_PER_TRADE_PCT    = 1.0      # Risk budget per trade (% of capital)
-MAX_SL_PCT            = 1.25     # Stoploss max distance from entry (%)
+MAX_SL_PCT            = 3.0      # Stoploss max distance from entry (%)
 MIN_RR_RATIO          = 2.0      # Minimum risk:reward ratio
 MAX_DAILY_LOSS_PCT    = 15.0     # Agent flags a warning above this
 MIN_CONFIDENCE        = 60       # Skip if model confidence < this
-MAX_TRADES_PER_DAY    = 2        # Only keep the best 2 setups per day
-MAX_OPEN_POSITIONS    = 1        # Only one approved open position at a time
+MAX_TRADES_PER_DAY    = 10       # Only keep the best 10 setups per day
+MAX_OPEN_POSITIONS    = 10       # Only 10 approved open position at a time
 MAX_POSITION_CAPITAL_PCT = 30.0  # Cap single-position exposure
 
 # ── Intraday execution window ───────────────────────────────────────────────────
@@ -92,7 +92,7 @@ EOD_HOUR              = 15
 EOD_MINUTE            = 25       # EOD report at 3:25 PM IST
 
 # ── Web dashboard ───────────────────────────────────────────────────────────────
-DASHBOARD_HOST        = "127.0.0.1"
+DASHBOARD_HOST        = "0.0.0.0"
 DASHBOARD_PORT        = 8080
 FLASK_SECRET_KEY      = os.getenv("FLASK_SECRET_KEY", "dev-only-change-me")
 
